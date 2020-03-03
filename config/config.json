@@ -1,0 +1,26 @@
+{
+  "development": {
+    "username": "admin",
+    "password": "r01012005",
+    "database": "db_eac",
+    "host": "eac-prod.czdjelanhmzm.sa-east-1.rds.amazonaws.com",
+    "dialect": "mysql",
+    "operatorsAliases": 0
+  },
+  "test": {
+    "username": "admin",
+    "password": "r01012005",
+    "database": "db_eac",
+    "host": "eac-prod.czdjelanhmzm.sa-east-1.rds.amazonaws.com",
+    "dialect": "mysql",
+    "operatorsAliases": false
+  },
+  "production": {
+    "username": "admin",
+    "password": "r01012005",
+    "database": "db_eac",
+    "host": "eac-prod.czdjelanhmzm.sa-east-1.rds.amazonaws.com",
+    "dialect": "mysql",
+    "operatorsAliases": false
+  }
+}
