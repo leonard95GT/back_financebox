@@ -26,7 +26,7 @@ exports.post = (req,res) => {
             ebitda_type: req.body.meta_ebitda,
             ebitda_value: req.body.crescimento_ebitda,
             goal_ebiebitda_percenttda_percent: req.body.porcento_crescimento_ebitda,
-            //company_id: req.body.company_id,
+            company_id: 1,
         })
         res.send('Projeção cadastrada com sucesso!');  
     } catch (error) {
