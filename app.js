@@ -14,6 +14,9 @@ var projectionRouter = require('./routes/projection')
 var salesRouter = require('./routes/sales')
 var distributionRouter = require('./routes/distribution_channel')
 var taxRouter = require('./routes/tax')
+var salaryRouter = require('./routes/salary_position')
+var expenseRouter = require('./routes/expense')
+var variableCost = require('./routes/variable_cost')
 
 var app = express();
 
@@ -37,6 +40,10 @@ app.use('/projection', projectionRouter);
 app.use('/sales', salesRouter);
 app.use('/distribution', distributionRouter);
 app.use('/tax', taxRouter)
+app.use('/salary', salaryRouter)
+app.use('/expense', expenseRouter)
+app.use('/variable-cost', variableCost)
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
