@@ -20,8 +20,6 @@ exports.get = (req,res,next) => {
  
 },
 
-
-
 //Get all records in the database
 exports.getOne = async(req,res,next) => {
     let email = req.body.email;

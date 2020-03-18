@@ -31,7 +31,7 @@ exports.post = (req,res) => {
         res.send('Projeção cadastrada com sucesso!');  
     } catch (error) {
         res.send(error)
-    }x
+    }
   
     
 },
