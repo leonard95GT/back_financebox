@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-const controller = require('../controllers/payment');
+const controller = require('../controllers/expense');
 
 /* GET users listing. */
 router.get('/', controller.get);
