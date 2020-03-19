@@ -79,3 +79,81 @@ exports.delete = (req,res) => {
     }
 }
 
+exports.grossProfit = (req,res) => {
+   //The values are divided monthly
+    var receitaLiquida = 300;
+    var custo = 40;
+    var lucroBruto = (parseInt(receitaLiquida) - parseInt(custo));
+    var receitaBruta = 2000;
+
+    var resultadoLucro = (parseInt(lucroBruto) / parseInt(receitaBruta));
+    res.status(200).json({
+        resultado: resultadoLucro
+    })
+}
+
+exports.percentLiquidIncome = (req,res) => {
+    var receitaBruta = 120;
+    var receitaLiquida = 108;
+
+    var resultado = (parseInt(receitaLiquida) / parseInt(receitaBruta))
+
+    res.status(200).json({
+        resultado: resultado
+    })
+}
+
+exports.grossMargin = (req, res) => {
+    var receitaBruta = 120;
+    var lucroBruto = 60;
+
+    var resultadoMargem = (parseInt(lucroBruto) / parseInt(receitaBruta))
+
+    res.status(200).json({
+        teste:resultadoMargem
+    })
+}
+
+exports.rol = (req,res) => {
+    var despesas = 800;
+    var receitaLiquida = 1000;
+
+    var resultado = (parseInt(despesas) / parseInt(receitaLiquida))
+
+    res.status(200).json({
+        resultado: resultado
+    })
+}
+
+exports.ebitdaCalc = (req, res) => {
+    var lucroBruto = 2000;
+    var totalDespesa = 300;
+    
+    var lucroEbitda = (lucroBruto - totalDespesa);
+    var margeEbitda = (lucroBruto / totalDespesa)
+    res.status(200).json({
+        lucro: lucroEbitda,
+        margem: margeEbitda
+    })
+}
+
+exports.liquidIncome = (req,res) => {
+    var ebitda = 300;
+    var irpj = 0;
+    var csll = 0;
+
+    var lucroLiquido = (ebitda - (irpj+csll))
+
+    res.status(200).json({
+        lucroLiquido: lucroLiquido
+    })
+}
+
+
+    
+
+
+
+
+
+

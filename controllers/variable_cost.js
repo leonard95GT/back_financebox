@@ -16,7 +16,7 @@ exports.post = (req,res) => {
             typeCost: req.body.typeCost
         })
 
-        res.status(200).send('Custo cadastrado com sucesso')
+        res.status(200).send('Custo cadastrado com sucesso' )
     } catch (error) {
         res.status(400).send(error)        
     }

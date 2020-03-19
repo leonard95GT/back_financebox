@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "admin",
-    "password": "r01012005",
-    "database": "db_eac",
-    "host": "eac-prod.czdjelanhmzm.sa-east-1.rds.amazonaws.com",
+    "username": "dev",
+    "password": "",
+    "database": "finance_homolog",
+    "host": "35.247.224.229",
     "dialect": "mysql",
     "operatorsAliases": 0
   },

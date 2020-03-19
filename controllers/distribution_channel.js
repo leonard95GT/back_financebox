@@ -38,7 +38,7 @@ exports.post = (req,res) => {
 },
 
 //Update a especific record in database
-    exports.put = (req,res) => {        
+exports.put = (req,res) => {        
     //method for action in database
     try {
         Distribution_Channel.update(
