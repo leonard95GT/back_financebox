@@ -13,11 +13,11 @@ router.put('/:id', controller.put);
 router.delete('/:id', controller.delete);
 
 //Routes for calculation
-router.get('/gross', controller.grossProfit)
-router.get('/percent-profit', controller.percentLiquidIncome)
-router.get('/rol', controller.rol)
-router.get('/margin', controller.grossMargin)
-router.get('/ebitda', controller.ebitdaCalc)
-router.get('/liquidIncome', controller.liquidIncome)
+router.post('/gross', controller.grossProfit)
+router.post('/percent-profit', controller.percentLiquidIncome)
+router.post('/rol', controller.rol)
+router.post('/margin', controller.grossMargin)
+router.post('/ebitda', controller.ebitdaCalc)
+router.post('/liquidIncome', controller.liquidIncome)
 
 module.exports = router;

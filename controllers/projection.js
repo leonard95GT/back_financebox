@@ -81,10 +81,10 @@ exports.delete = (req,res) => {
 
 exports.grossProfit = (req,res) => {
    //The values are divided monthly
-    var receitaLiquida = 300;
-    var custo = 40;
+    var receitaLiquida = req.body.receitaLiquida;
+    var custo = req.body.custo;
     var lucroBruto = (parseInt(receitaLiquida) - parseInt(custo));
-    var receitaBruta = 2000;
+    var receitaBruta = req.body.receitaBruta;
 
     var resultadoLucro = (parseInt(lucroBruto) / parseInt(receitaBruta));
     res.status(200).json({
@@ -93,8 +93,8 @@ exports.grossProfit = (req,res) => {
 }
 
 exports.percentLiquidIncome = (req,res) => {
-    var receitaBruta = 120;
-    var receitaLiquida = 108;
+    var receitaBruta = req.body.receitaBruta;
+    var receitaLiquida = req.body.receitaLiquida;
 
     var resultado = (parseInt(receitaLiquida) / parseInt(receitaBruta))
 
@@ -104,8 +104,8 @@ exports.percentLiquidIncome = (req,res) => {
 }
 
 exports.grossMargin = (req, res) => {
-    var receitaBruta = 120;
-    var lucroBruto = 60;
+    var receitaBruta = req.body.receitaBruta;
+    var lucroBruto = req.body.lucroBruto;
 
     var resultadoMargem = (parseInt(lucroBruto) / parseInt(receitaBruta))
 
@@ -115,8 +115,8 @@ exports.grossMargin = (req, res) => {
 }
 
 exports.rol = (req,res) => {
-    var despesas = 800;
-    var receitaLiquida = 1000;
+    var despesas = req.body.totalDespesa;
+    var receitaLiquida = req.body.receitaLiquida;
 
     var resultado = (parseInt(despesas) / parseInt(receitaLiquida))
 
@@ -126,8 +126,8 @@ exports.rol = (req,res) => {
 }
 
 exports.ebitdaCalc = (req, res) => {
-    var lucroBruto = 2000;
-    var totalDespesa = 300;
+    var lucroBruto = req.body.lucroBruto;
+    var totalDespesa = req.body.totalDespesa;
     
     var lucroEbitda = (lucroBruto - totalDespesa);
     var margeEbitda = (lucroBruto / totalDespesa)
@@ -138,19 +138,23 @@ exports.ebitdaCalc = (req, res) => {
 }
 
 exports.liquidIncome = (req,res) => {
-    var ebitda = 300;
+    var ebitda = req.body.ebitda;
     var irpj = 0;
     var csll = 0;
+    var receitaBruta = req.body.receitaBruta;
 
     var lucroLiquido = (ebitda - (irpj+csll))
 
+    var percentoLucro = (lucroLiquido / receitaBruta)
+
     res.status(200).json({
-        lucroLiquido: lucroLiquido
+        lucroLiquido: lucroLiquido,
+        percentual: percentoLucro
     })
 }
 
 
-    
+
 
 
 
