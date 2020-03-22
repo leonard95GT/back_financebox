@@ -27,10 +27,12 @@ exports.post = (req,res) => {
             ebitda_value: req.body.crescimento_ebitda,
             goal_ebiebitda_percenttda_percent: req.body.porcento_crescimento_ebitda,
             company_id: 1,
+        }).then(function(resultado){
+            res.status(200).json({resultado: resultado.id})
         })
-        res.send('Projeção cadastrada com sucesso!');  
+          
     } catch (error) {
-        res.send(error)
+        res.status(500).send(error)
     }
   
     
