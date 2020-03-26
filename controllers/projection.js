@@ -135,9 +135,10 @@ exports.rol = (req,res) => {
 exports.ebitdaCalc = (req, res) => {
     var lucroBruto = req.body.lucroBruto;
     var totalDespesa = req.body.totalDespesa;
-    
+    var receitaBruta = req.body.receitaBruta;
+
     var lucroEbitda = (lucroBruto - totalDespesa);
-    var margeEbitda = (lucroBruto / totalDespesa)
+    var margeEbitda = ((lucroEbitda / receitaBruta) * 100)
     res.status(200).json({
         lucro: lucroEbitda,
         margem: margeEbitda
