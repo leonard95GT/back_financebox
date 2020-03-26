@@ -89,8 +89,12 @@ exports.grossProfit = (req,res) => {
     var receitaBruta = req.body.receitaBruta;
 
     var resultadoLucro = (parseInt(lucroBruto) / parseInt(receitaBruta));
+
+
+
     res.status(200).json({
-        resultado: resultadoLucro
+        resultadoMargem: resultadoLucro,
+        resultadoProfit: lucroBruto   
     })
 }
 
