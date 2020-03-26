@@ -89,9 +89,6 @@ exports.grossProfit = (req,res) => {
     var receitaBruta = req.body.receitaBruta;
 
     var resultadoLucro = ((parseInt(lucroBruto)) / (parseInt(receitaBruta)) * 100);
-    //var resultadoLucro = ((6000) / (10000) * 100) ;
-    
-
 
     res.status(200).json({
         resultadoMargem: Math.round(resultadoLucro),
