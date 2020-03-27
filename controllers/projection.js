@@ -153,11 +153,11 @@ exports.liquidIncome = (req,res) => {
 
     var lucroLiquido = (ebitda - (irpj+csll))
 
-    var percentoLucro = (lucroLiquido / receitaBruta)
+    var percentoLucro = ((lucroLiquido / receitaBruta) * 100)
 
     res.status(200).json({
         lucroLiquido: lucroLiquido,
-        percentual: percentoLucro
+        percentual: Math.round(percentoLucro)
     })
 }
 
