@@ -95,7 +95,7 @@ exports.grossProfit = (req,res) => {
 
     res.status(200).json({
         resultadoMargem: Math.round(resultadoLucro),
-        resultadoProfit: lucroBruto   
+        resultadoProfit: Math.round(lucroBruto)   
     })
 }
 
@@ -106,7 +106,7 @@ exports.percentLiquidIncome = (req,res) => {
     var resultado = (parseInt(receitaLiquida) / parseInt(receitaBruta))
 
     res.status(200).json({
-        resultado: resultado
+        resultado: Math.round(resultado)
     })
 }
 
@@ -117,7 +117,7 @@ exports.grossMargin = (req, res) => {
     var resultadoMargem = (parseInt(lucroBruto) / parseInt(receitaBruta))
 
     res.status(200).json({
-        teste:resultadoMargem
+        teste:Math.round(resultadoMargem)
     })
 }
 
@@ -140,8 +140,8 @@ exports.ebitdaCalc = (req, res) => {
     var lucroEbitda = (lucroBruto - totalDespesa);
     var margeEbitda = ((lucroEbitda / receitaBruta) * 100)
     res.status(200).json({
-        lucro: lucroEbitda,
-        margem: margeEbitda
+        lucro: Math.round(lucroEbitda),
+        margem: Math.round(margeEbitda)
     })
 }
 
@@ -156,7 +156,7 @@ exports.liquidIncome = (req,res) => {
     var percentoLucro = ((lucroLiquido / receitaBruta) * 100)
 
     res.status(200).json({
-        lucroLiquido: lucroLiquido,
+        lucroLiquido: Math.round(lucroLiquido),
         percentual: Math.round(percentoLucro)
     })
 }
