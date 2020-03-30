@@ -125,7 +125,7 @@ exports.rol = (req,res) => {
     var despesas = req.body.totalDespesa;
     var receitaLiquida = req.body.receitaLiquida;
 
-    var resultado = ((parseInt(despesas) / parseInt(receitaLiquida)) * 100)
+    var resultado = (((parseInt(despesas) / parseInt(receitaLiquida)) * 100) / 12)
 
     res.status(200).json({
         resultado: Math.round(resultado)
